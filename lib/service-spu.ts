@@ -1,30 +1,42 @@
 import { Got } from "got";
 import { Client } from "./client";
 import { parseHTML } from "linkedom";
+import { pipeline } from "stream/promises";
+import { createWriteStream } from "fs";
 
 export class ServiceSPU {
 
-    client!: Got;
-    processo!: string;
+  client!: Got;
+  processo!: string;
 
-    static factory(processo: string) {
-        const instance = new ServiceSPU();
-        instance.client = Client.factory(`${processo}`)
+  static factory(processo: string) {
+    const instance = new ServiceSPU();
+    instance.client = Client.factory(`${processo}`)
 
-        instance.processo = processo;
+    instance.processo = processo;
 
-        return instance;
-    }
+    return instance;
+  }
 
-    async data() {
-        const request = await this.client.get(`https://spuevolucao.fortaleza.ce.gov.br/api/spu/processos/${this.processo}/materializar.pdf`)
+  async data() {
+    const request = await this.client.get(`https://spuevolucao.fortaleza.ce.gov.br/api/spu/processos/${this.processo}/materializar.pdf`)
 
-        const document = parseHTML(request.body).document;
+    const document = parseHTML(request.body).document;
 
-        const dataJSON: any = document.querySelector('[data-react-class=FolderProcessoSo]')?.getAttribute('data-react-props')!
+    const dataJSON: any = document.querySelector('[data-react-class=FolderProcessoSo]')?.getAttribute('data-react-props')!
 
-        return JSON.parse(dataJSON) as Processo;
-    }
+    return JSON.parse(dataJSON) as Processo;
+  }
+
+  async download(id: string) {
+    const url = `https://spumaterializar.sepog.fortaleza.ce.gov.br/processos/${this.processo}/documento_so/${id}/pdf`
+    
+    console.log(url)
+    const request = this.client
+      .stream(url)
+    
+    return request;
+  }
 }
 
 export type Processo = {
@@ -40,7 +52,7 @@ export type Processo = {
         setores: Array<{
           setor: string
           documentos: Array<{
-            id: number
+            id: number|string
             setor: string
             nome: string
           }>
