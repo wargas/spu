@@ -1,39 +1,50 @@
 import { ServiceSPU } from "@/lib/service-spu";
-import Image from "next/image";
+import { Table, TableBody, TableCell, TableHead, TableRow, TableHeader } from '@/components/ui/table'
 import { Fragment } from "react/jsx-runtime";
+import { Input } from "@/components/ui/input";
+import { Field, FieldLabel } from "@/components/ui/field";
 
-export default async function Home() {
+export default async function Home({ searchParams }: {searchParams: Promise<any>}) {
 
   const service = ServiceSPU.factory('P059892_2026')
 
   const data = await service.data()
 
   return (
-    <div>
-      <h1>{data.dataTree.processo.numero}</h1>
+    <div className="p-4">
+      <form action="" className="flex gap-4">
+        <Field>
+          <FieldLabel>Numero</FieldLabel>
+          <Input />
+        </Field>
+         <Field>
+          <FieldLabel>Ano</FieldLabel>
+          <Input />
+        </Field>
+      </form>
 
-      <table className="w-full">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Setor</th>
-            <th>Nome</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Table className="w-full">
+        <TableHeader>
+          <TableRow>
+            <TableHead>ID</TableHead>
+            <TableHead>Setor</TableHead>
+            <TableHead>Nome</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
           {data.dataTree.processo.itens.setores.map((setor, i) => (
             <Fragment key={i}>
               {setor.documentos.map(item => (
-                <tr key={item.id}>
-                  <td>{item.id}</td>
-                  <td>{item.setor}</td>
-                  <td>{item.nome}</td>
-                </tr>
+                <TableRow key={item.id}>
+                  <TableCell>{item.id}</TableCell>
+                  <TableCell>{item.setor}</TableCell>
+                  <TableCell>{item.nome}</TableCell>
+                </TableRow>
               ))}
             </Fragment>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   );
 }
