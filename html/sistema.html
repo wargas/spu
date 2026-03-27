@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang='pt-BR' ng-app='ssp'>
+<head>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+<meta content='Sistema Servidor Público' name='Sistema Administrativo do Servidor Público de Fortaleza'>
+<title>Sistema Servidor Público</title>
+<link rel="shortcut icon" type="image/x-icon" href="/sistema/assets/favicon-fc41d5ffb9d2ed27f18f0d9569b96e5ccfa30654b93ccccce6bdd5fb1ffac33b.ico" />
+<link rel="stylesheet" media="all" href="/sistema/assets/application-53b952b960408e33e05a510288df1bfa539d2f52a76e55c2d5cd0681f044c6ef.css" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="DMJp8BLVTWrc34UjlWTOuPJGqkm40oizQpS5iDU84fTkqEAyAZWq1sG9nBUgi+0cSgIHzUscjYr88k9l+Ej7UA==" />
+
+
+</head>
+<body ng-cloak='' ng-controller='BodyCtrl'>
+<!-- = render 'layouts/facebook_messenger' -->
+<div id='processando'>
+<div class='col-lg-12'>
+<h1 class='text-success text-center'>
+<i class='fa fa-circle-o-notch fa-spin'></i>
+Processando...
+</h1>
+</div>
+</div>
+<div id='load' ng-show='!showFullScreen'>
+<!-- Site header menu links -->
+<div class='container-top'>
+<section id='header-fortaleza'>
+<div class='header-fortaleza-container'>
+<a href='//www.fortaleza.ce.gov.br'>
+<img class='logo-fortaleza' height='24' src='https://ssp.sepog.fortaleza.ce.gov.br///sistema/assets/logo-header-fortaleza-12c37fca92e20eb28eeed547565fce934d196e26e561e5bbb901ed5d15e3c5d6.png'>
+</a>
+<a class='acesso-informacao' href='//www.fortaleza.ce.gov.br'>Prefeitura de Fortaleza</a>
+<nav class='navigation-header-fortaleza'>
+<ul class='mobile-hide'>
+<li>
+<a href='//acessoainformacao.fortaleza.ce.gov.br'>Acesso à Informação</a>
+</li>
+<li>
+<a href='//transparencia.fortaleza.ce.gov.br/'>Transparência</a>
+</li>
+<li>
+<a href='//catalogodeservicos.fortaleza.ce.gov.br/portal'>Serviços</a>
+</li>
+<li>
+<a href='//legislacao.pgm.fortaleza.ce.gov.br'>Legislação</a>
+</li>
+</ul>
+</nav>
+</div>
+</section>
+</div>
+
+<!-- Site topo -->
+<div class='topo'>
+<div class='container'>
+<div class='header'>
+<div class='row'>
+<div class='col-md-6 col-lg-5'>
+<a href="https://servidor.sepog.fortaleza.ce.gov.br/"><h1>
+canal do
+<span>servidor</span>
+</h1>
+</a></div>
+<div class='col-md-6 col-lg-7'>
+<div id='logo_perfil'>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class='topo-menu' style='height: 52px; background-color: #199b91;'>
+<div class='container'>
+</div>
+<div aria-hidden='true' class='modal fade' id='modal-vinculos' role='dialog' tabindex='-1'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button class='close' data-dismiss='modal'>
+<span aria-hidden='true'>&times;</span>
+<span class='sr-only'>Fechar</span>
+</button>
+<h4 class='text-center modal-title'>Vinculações</h4>
+</div>
+<div class='modal-body'>
+<div ng-show='animacaoVinculos'>
+<div class='row'>
+<div class='col-lg-12'>
+<h1 class='text-success text-center'>
+<i class='fa fa-circle-o-notch fa-spin'></i>
+Aguarde...
+</h1>
+</div>
+</div>
+</div>
+<div ng-hide='animacaoVinculos'>
+<table class='table table-striped'>
+<thead>
+<tr>
+<th class='text-center'>Matrícula</th>
+<th>Cargo</th>
+<th>Categoria</th>
+<th>Órgao</th>
+<th>#</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-class='{ danger: vinculo.ativo }' ng-repeat='vinculo in vinculos'>
+<td class='text-center'>
+{{vinculo.matricula}}
+</td>
+<td>
+{{vinculo.cargo}}
+</td>
+<td>
+{{vinculo.categoria}}
+</td>
+<td>
+{{vinculo.orgao}}
+</td>
+<td>
+<a class='btn-block btn-xs btn btn-default' href='/usuario/vinculos/{{vinculo.matricula}}' title='Ativar'>
+<i class='fa-file-pdf-o fa'></i>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='header-shadow'></div>
+
+<!-- Site conteudo -->
+<div class='container'>
+<div class='conteudo'>
+<div id='content-effect'>
+<div id='content-load'>
+<div class='row'>
+<div class='col-lg-12'>
+<h1 class='text-success text-center'>
+<i class='fa fa-circle-o-notch fa-spin'></i>
+Aguarde...
+</h1>
+</div>
+</div>
+</div>
+<div id='content-body'>
+<div class='container-fluid' id='conteudo'>
+<div class='jumbotron'>
+<h1>Área Restrita ao Servidor!</h1>
+<p class='text-info lead'>
+Faça login na região abaixo para ter acesso a sua região administrativa e usufruir de vários serviços online.
+</p>
+<br>
+
+</div>
+<div class='col-lg-offset-2 col-lg-8 col-md-8 col-md-offset-2'>
+<div class='panel panel-info'>
+<div class='panel-heading'>
+<h3 class='panel-title'>Login</h3>
+</div>
+<div class='panel-body'>
+<form id="form-login" name="form-login" novalidate="novalidate" autocomplete="off" class="simple_form new_usuario" action="/sistema/checar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="BefZv0FTpxRbAvG3ommQy8JcGc27shUMNyTdRPBbQAftjfB9UhNAqEZg6IEXhrNvehi0SUh8EDWJQiupPS9aow==" /><div class='form-group has-feedback'>
+<label for='input-username'>Matrícula:</label>
+<input id="input-matricula-cpf" class="string optional input-lg form-control matricula_cpf form-control" placeholder="Digite sua matrícula sem o dígito" autocomplete="new-password" type="text" name="usuario[matricula_cpf]" />
+<span class='glyphicon form-control-feedback'></span>
+</div>
+<div class='form-group has-feedback'>
+<label for='input-senha'>
+Senha:
+</label>
+<input id="input-senha" class="password required input-lg form-control form-control" placeholder="Digite sua senha aqui" autocomplete="new-password" type="password" name="usuario[password]" />
+<span class='glyphicon form-control-feedback'></span>
+</div>
+<div class='checkbox'>
+<label for='usuario_remember'>
+<input value="0" type="hidden" name="usuario[remember]" /><label><input label="false" wrapper="false" class="boolean optional" type="checkbox" value="1" name="usuario[remember]" id="usuario_remember" /></label>
+Permanecer Logado?
+</label>
+</div>
+<button class='aguarde btn-lg btn-block btn btn-default' type='submit'>Entrar</button>
+</form>
+<script>
+document.getElementById('input-matricula-cpf').addEventListener("keypress", function(e){ $(this).val($(this).val().replace(/[^\d].+/, "")); if ((e.which < 48 || e.which > 57 )) {  e.preventDefault();  }})
+</script>
+
+</div>
+<div class='panel-footer text-right'>
+<a target="_parent" href="/sistema/reset-password-email"><small class='text-info'>
+Esqueceu sua Senha?
+</small>
+</a></div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Site rodape -->
+<div class='rodape'>
+<div class='container'>
+<div class='col-md-2'>
+<img width="200" src="/sistema/assets/logo-horizontal-texto-branco-87ff05fe8c4583887af37cfa0964ce2947086cc02a56d2a995f59877e0ad0372.png" alt="Logo horizontal texto branco" />
+</div>
+<div class='col-md-6'>
+<div class='ul'>
+<div class='li'>
+<div class='address'>
+Av. Desembargador Moreira, 2875 - Dionísio Torres
+<br>
+Fortaleza-CE - CEP: 60.170-002
+<br>
+Fala Fortaleza: 0800.285.0880
+<br>
+Ouvidoria site: https://ouvidoria.cgm.fortaleza.ce.gov.br/portal
+<br>
+Ouvidoria e-mail: ouvidoriageral.cgm@cgm.fortaleza.ce.gov.br
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<script src="/sistema/assets/application-061527ff5299e6be4628f3e8dc9ab4089c2c7d5d0eb5fa918dad2b5ebd6140e5.js"></script>
+<script src="https://barraportal.fortaleza.ce.gov.br/default.js"></script>
+
+
+<script>
+  (function() {
+    this.rotas_publicas_validar_declaracao_url = "https://ssp.sepog.fortaleza.ce.gov.br/sistema/validar/declaracao";
+  
+    this.rotas_publicas_validar_contracheque_url = "https://ssp.sepog.fortaleza.ce.gov.br/sistema/validar/contracheque";
+  
+  }).call(this);
+</script>
+
+
+
+<!-- = render 'layouts/banner_bradesco' -->
+</body>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-66319521-2', 'auto');ga('send', 'pageview');
+</script>
+<!-- = render 'layouts/facebook_messenger' -->
+</html>

@@ -8,36 +8,40 @@ import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
 import { FileTextIcon } from "lucide-react";
 import Link from "next/link";
+import { ServiceServidor } from "@/lib/service-servidor";
+import { ProcessoDetalhe } from "@/components/processo-detalhe";
 
 export default async function Home({ searchParams }: { searchParams: Promise<any> }) {
 
   const processo = (await searchParams).processo
 
-  let data: Processo | null = null;
-  if (processo) {
+  // const service = ServiceServidor.factory() 
 
-    const service = ServiceSPU.factory(processo)
+  // let data: Processo | null = null;
+  // if (processo) {
 
-    data = await service.data();
+  //   const service = ServiceSPU.factory(processo)
+
+  //   data = await service.data();
 
     
 
-    data.dataTree.processo.itens.setores.unshift({
-      documentos: [
-        {
-          id: 'CAPA',
-          setor: '',
-          nome: 'CAPA'
-        },
-        {
-          id: 'RESUMO',
-          setor: '',
-          nome: 'RESUMO'
-        }
-      ],
-      setor: 'INFORMAÇÕES'
-    })
-  }
+  //   data.dataTree.processo.itens.setores.unshift({
+  //     documentos: [
+  //       {
+  //         id: 'CAPA',
+  //         setor: '',
+  //         nome: 'CAPA'
+  //       },
+  //       {
+  //         id: 'RESUMO',
+  //         setor: '',
+  //         nome: 'RESUMO'
+  //       }
+  //     ],
+  //     setor: 'INFORMAÇÕES'
+  //   })
+  // }
 
   async function handleBusca(data: FormData) {
     'use server'
@@ -56,41 +60,10 @@ export default async function Home({ searchParams }: { searchParams: Promise<any
         <Button type="submit">Buscar</Button>
       </form>
 
-      {data && (
-        <Table className="w-full">
-          <TableHeader>
-            <TableRow>
-              <TableHead>ID</TableHead>
-              <TableHead>Setor</TableHead>
-              <TableHead>Nome</TableHead>
-              <TableHead></TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {data?.dataTree.processo.itens.setores.map((setor, i) => (
-              <Fragment key={i}>
-                {setor.documentos.map(item => (
-                  <TableRow key={item.id}>
-                    <TableCell>{item.id}</TableCell>
-                    <TableCell>{item.setor}</TableCell>
-                    <TableCell>{item.nome}</TableCell>
-                    <TableCell>
-                      <div className="flex justify-end">
-
-                        <Button size={'icon-sm'} variant={'ghost'} asChild>
-                          <a target="_blank" href={`/api/download?id=${item.id}&processo=${processo}`}>
-                            <FileTextIcon />
-                          </a>
-                        </Button>
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </Fragment>
-            ))}
-          </TableBody>
-        </Table>
+      {processo && (
+        <ProcessoDetalhe numero={processo} />
       )}
+
     </div>
   );
 }

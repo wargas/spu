@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang='pt-BR' ng-app='ssp'>
+<head>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+<meta content='Sistema Servidor Público' name='Sistema Administrativo do Servidor Público de Fortaleza'>
+<title>Sistema Servidor Público</title>
+<link rel="shortcut icon" type="image/x-icon" href="/sistema/assets/favicon-fc41d5ffb9d2ed27f18f0d9569b96e5ccfa30654b93ccccce6bdd5fb1ffac33b.ico" />
+<link rel="stylesheet" media="all" href="/sistema/assets/application-53b952b960408e33e05a510288df1bfa539d2f52a76e55c2d5cd0681f044c6ef.css" />
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="NLRl5CZZDakVWrEmyJZOtyEYt2q7nMFFuxMRc3d+R9ZyxeXRBOdplONuCj+bugzR0+preFwthCnGtBJ9HF1Gzg==" />
+
+
+</head>
+<body ng-cloak='' ng-controller='BodyCtrl'>
+<!-- = render 'layouts/facebook_messenger' -->
+<div id='processando'>
+<div class='col-lg-12'>
+<h1 class='text-success text-center'>
+<i class='fa fa-circle-o-notch fa-spin'></i>
+Processando...
+</h1>
+</div>
+</div>
+<div id='load' ng-show='!showFullScreen'>
+<!-- Site header menu links -->
+<div class='container-top'>
+<section id='header-fortaleza'>
+<div class='header-fortaleza-container'>
+<a href='//www.fortaleza.ce.gov.br'>
+<img class='logo-fortaleza' height='24' src='https://ssp.sepog.fortaleza.ce.gov.br///sistema/assets/logo-header-fortaleza-12c37fca92e20eb28eeed547565fce934d196e26e561e5bbb901ed5d15e3c5d6.png'>
+</a>
+<a class='acesso-informacao' href='//www.fortaleza.ce.gov.br'>Prefeitura de Fortaleza</a>
+<nav class='navigation-header-fortaleza'>
+<ul class='mobile-hide'>
+<li>
+<a href='//acessoainformacao.fortaleza.ce.gov.br'>Acesso à Informação</a>
+</li>
+<li>
+<a href='//transparencia.fortaleza.ce.gov.br/'>Transparência</a>
+</li>
+<li>
+<a href='//catalogodeservicos.fortaleza.ce.gov.br/portal'>Serviços</a>
+</li>
+<li>
+<a href='//legislacao.pgm.fortaleza.ce.gov.br'>Legislação</a>
+</li>
+</ul>
+</nav>
+</div>
+</section>
+</div>
+
+<!-- Site topo -->
+<div class='topo'>
+<div class='container'>
+<div class='header'>
+<div class='row'>
+<div class='col-md-6 col-lg-5'>
+<a href="https://servidor.sepog.fortaleza.ce.gov.br/"><h1>
+canal do
+<span>servidor</span>
+</h1>
+</a></div>
+<div class='col-md-6 col-lg-7'>
+<div id='bloco-portal'>
+<div id='dados-usuario'>
+<div id='dados-info'>
+<dl>
+<dt></dt>
+<dd class='text-right'>
+Wargas Delmondes Teixeira
+</dd>
+<dt></dt>
+<dd class='text-right'>Sem cargo</dd>
+<dt></dt>
+<dd class='text-right'>
+<a href="/sistema/usuario/perfil">PERFIL</a>
+|
+<a href="/sistema/portal/logout-sistema?usuario_portal=ZO5pDgGJ">SAIR</a>
+</dd>
+</dl>
+</div>
+<div id='dados-imagem'>
+<img class="dropdown-toggle img-rounded" src="/sistema/assets/small/thumb_user-63abb893764b4f152d5f0350940edcd7b1d08e917f025554a5465eb0bc4d827f.png" alt="Thumb user" width="70" height="70" />
+</div>
+</div>
+<div id='logo'>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class='topo-menu' style='height: 52px; background-color: #199b91;'>
+<div class='container'>
+<div class='menu-portal'>
+<ul class='nav nav-pills menu'><li class=''><a href='https://ssp.sepog.fortaleza.ce.gov.br/sistema'>HOME</a></li><li class='item-menu-canal '><a href='https://servidor.sepog.fortaleza.ce.gov.br///' >HOME</a></li><li class='item-direitos-e-vantagens dropdown-submenu seta parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>DIREITOS E VANTAGENS</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-abono-de-permanência '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=6' >ABONO DE PERMANÊNCIA</a></li><li class='item-afastamento dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=53' class='dropdown-toggle' data-toggle='dropdown'>AFASTAMENTOS</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-aniversário '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=23' >Aniversário </a></li><li class='item-casamento '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=24' >Casamento</a></li><li class='item-concorrer-às-eleições '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=54' >Concorrer às Eleições</a></li><li class='item-falecimento-de-pessoa-da-família-luto '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=25' >Falecimento de Pessoa da Família (LUTO)</a></li><li class='item-formação-profissional '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=59' >Missão ou Formação Profissional</a></li><li class='item-mandato-sindical '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=56' >Mandato Sindical </a></li><li class='item-participação-de-juri '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=27' >Participação de Juri</a></li><li class='item-serviço-eleitoral '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=26' >Serviço Eleitoral</a></li><li class='item-trato-de-interesse-particular '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=28' >Trato de Interesse Particular</a></li><li class='item-candidatura-eleitoral '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=21' >Concorrer a Cargo Eletivo</a></li></ul></li><li class='item-redução-de-carga-horária dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>ALTERAÇÃO DE CARGA HORÁRIA</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-redução-de-carga-horária-filho-especial '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=11' >Redução de Carga Horária - Dependente com Deficiência</a></li><li class='item-servidor-do-magistério '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=206' >Redução de Carga Horária - Magistério</a></li><li class='item-estudo '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=269' >Redução de Carga Horária - Estudo</a></li><li class='item-suplementação-de-carga-horária '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=13' >Suplementação de Carga Horária</a></li></ul></li><li class='item-averbação-desaverbação dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>AVERBAÇÃO/DESAVERBAÇÃO</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-averbação-de-tempo-de-serviço '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=14' >Averbação de Tempo de Serviço</a></li><li class='item-desaverbação-de-tempo-de-serviço '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=9' >Desaverbação de Tempo de Serviço</a></li></ul></li><li class='item-certidões-e-declarações dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>CERTIDÕES E DECLARAÇÕES</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-declaração-de-não-vínculo '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://vinculo.sepog.fortaleza.ce.gov.br' >Declaração de não vínculo</a></li><li class='item-declaração-de-vínculo-exercido '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://ssp.sepog.fortaleza.ce.gov.br/sistema/declaracao/vinculo-exercido' >Declaração de vínculo exercido</a></li></ul></li><li class='item-exoneração '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=270' >EXONERAÇÃO</a></li><li class='item-férias '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=271' >FÉRIAS</a></li><li class='item-licencas_menu dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>LICENÇAS</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-acompanhar-cônjuge-ou-companheiro '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=20' >Afastamento de Cônjuge</a></li><li class='item-licença-prêmio '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=8' >Licença-Prêmio</a></li><li class='item-mandato-eletivo '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=22' >Mandato Eletivo</a></li><li class='item-maternidade-e-adotante '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=18' >Maternidade e Adotante</a></li><li class='item-motivo-de-doença-em-pessoa-da-família '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=17' >Motivo de Doença em Pessoa da Família</a></li><li class='item-paternidade '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=19' >Paternidade</a></li><li class='item-tratamento-de-saúde '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=16' >Tratamento de Saúde</a></li><li class='item-licença-prêmio-gozo '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=281' >Licença-Prêmio Gozo</a></li></ul></li><li class='item-cessão-de-servidor dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=form&layout=edit' class='dropdown-toggle' data-toggle='dropdown'>MOVIMENTAÇÃO</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-cessão '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=33' >Cessão</a></li><li class='item-disposição '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=34' >Disposição</a></li><li class='item-requisição '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=35' >Requisição</a></li></ul></li><li class='item-reconhecimento-de-vínculo '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=282' >RECONHECIMENTO DE VÍNCULO</a></li></ul></li><li class='item-capacitacao dropdown-submenu seta parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>CAPACITAÇÃO</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-plano-de-desenvolvimento-e-capacitação '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/capacitacao/2025/pdc_2025_corrigido.pdf' >PLANO DE DESENVOLVIMENTO E CAPACITAÇÃO</a></li><li class='item-ficha-de-inscrição-e-ficha-técnica '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=280' >PROGRAMAÇÃO DE CURSOS</a></li><li class='item-meus-eventos-de-capacitação '><a href='https://servidor.sepog.fortaleza.ce.gov.br///sistema/eventos' >MINHAS CAPACITAÇÕES</a></li><li class='item-legislacao_capacitacao '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=193' >LEGISLAÇÃO</a></li></ul></li><li class='item-cargos-e-carreiras dropdown-submenu seta parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.fortaleza.ce.gov.br/' class='dropdown-toggle' data-toggle='dropdown'>CARREIRAS</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-carreiras-pmf '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=3' >CARREIRAS PMF</a></li><li class='item-progressão '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=137' >PROGRESSÃO POR TEMPO DE SERVIÇO</a></li><li class='item-promoção '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=138' >PROMOÇÃO POR CAPACITAÇÃO</a></li><li class='item-ingresso-e-desenvolvimento '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=49' >INGRESSO E DESENVOLVIMENTO</a></li><li class='item-incentivo-de-titulação dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=50' class='dropdown-toggle' data-toggle='dropdown'>INCENTIVO DE TITULAÇÃO</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-formulários dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>Formulários</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-requerimento-ace-e-acs '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/ACS_ACE.pdf' >Requerimento ACE e ACS</a></li><li class='item-requerimento-amc '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/AMC.pdf' >Requerimento AMC</a></li><li class='item-requerimento-analista-de-planejamento '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/ANALISTA_PLANEJAMENTO.pdf' >Requerimento Analista de Planejamento</a></li><li class='item-requerimento-auditoria-e-controle-interno '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/Auditoria_Controle_Interno.pdf' >Requerimento Auditoria e Controle Interno</a></li><li class='item-requerimento-agefis '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/AGEFIS.pdf' >Requerimento Fiscalização</a></li><li class='item-requerimento-gestão-pública '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/gestao_publica.pdf' >Requerimento Gestão Pública</a></li><li class='item-requerimento-gmf '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/GMF.pdf' >Requerimento GMF</a></li><li class='item-requerimento-ipem '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/ipem.pdf' >Requerimento IPEM</a></li><li class='item-requerimento-ipm '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/ipm.pdf' >Requerimento IPM</a></li><li class='item-requerimento-saúde-ijf '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/saude_ijf.pdf' >Requerimento SAÚDE IJF</a></li><li class='item-requerimento-taaf '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/TAAF.pdf' >Requerimento TAAF</a></li><li class='item-requerimento-urbfor '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2022/pccs/URBFOR.pdf' >Requerimento URBFOR</a></li><li class='item-requerimento-cgm '><a href='https://servidor.sepog.fortaleza.ce.gov.br//images/pdf/2025/pccs/REQUERIMENTO_ITA_-_AUDITOR_DE_CONTROLE_INTERNO_CGM.pdf' >Requerimento CGM</a></li></ul></li><li class='item-instruções-normativas-portarias dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>Instruções Normativas/ Portarias</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-ace-e-acs '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=65' >ACE e ACS</a></li><li class='item-amc '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/amc.pdf' >AMC</a></li><li class='item-fiscais '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/fiscalizacao.pdf' >Fiscais</a></li><li class='item-gmf '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=64' >GMF</a></li><li class='item-gestão-pública '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/gestao_publica.pdf' >Gestão Pública</a></li><li class='item-ipem '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/ipem.pdf' >IPEM</a></li><li class='item-ipm '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/ipm.pdf' >IPM</a></li><li class='item-planejamento-e-gestão '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/planejamento_gestao.pdf' >Planejamento e Gestão</a></li><li class='item-saúde '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/saude.pdf' >Saúde</a></li><li class='item-saúde-ijf '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/saude_ijf.pdf' >Saúde IJF</a></li><li class='item-taaf-sefin '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/sefin.pdf' >TAAF - SEFIN</a></li><li class='item-urbfor '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/cargos_carreiras/ITA/instrucao_normativa/urbfor.pdf' >URBFOR</a></li><li class='item-cgm '><a href='https://servidor.sepog.fortaleza.ce.gov.br//images/pdf/2025/pccs/PORTARIA_CONJUNTA_SEPOG-CGM_N_0001-2025_DISCIPLINA_A_CONCESSO_DO_ITA_AUDITORIA_E_CONTROLE_INTERNO.pdf' >CGM</a></li></ul></li><li class='item-enquadramento-especial '><a href='https://servidor.sepog.fortaleza.ce.gov.br///images/pdf/2024/Requerimento_Processo_ENQUADRAMENTO_ESPECIAL_-_2013.pdf' >Enquadramento Especial</a></li></ul></li><li class='item-sinep '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=47' >SINEP</a></li></ul></li><li class='item-ipm-saúde dropdown-submenu seta parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>IPM</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-funcionamento-ipm '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images//pdf/Sinep/mesa_setorial/ipm/CARTAZ_A3_-_ATENDIMENTO_6_1.png' >HORÁRIOS DE ATENDIMENTO</a></li><li class='item-ipm-digital '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://app.ipmfor.ce.gov.br/#/home' >IPM DIGITAL</a></li><li class='item-odontologia-ipm-saúde-2 '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/menu-noticias/236-atendimento-odontol%C3%B3gico-para-benefici%C3%A1rios-do-ipm-sa%C3%BAde-%C3%A9-agendado-pelo-teleatendimento-ipm.html' >ODONTOLOGIA IPM SAÚDE</a></li><li class='item-portaria-de-parametrização-do-ipm-saúde '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.fortaleza.ce.gov.br/images/pdf/PORTARIA_DE_PARAMETRIZAO_DOM_GERAL_23092019__16592.pdf' >PORTARIA DE PARAMETRIZAÇÃO DO IPM SAÚDE</a></li><li class='item-guia-médico-do-ipm-saúde '><a href='https://servidor.sepog.fortaleza.ce.gov.br//images/pdf/2025/GUIA_IPM_2025-263.pdf' >GUIA MÉDICO DO IPM SAÚDE</a></li><li class='item-ouvidoria-ipm '><a href='http://ouvidoria.ipmfor.ce.gov.br/' >OUVIDORIA IPM</a></li><li class='item-ramais-ipm '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/WhatsApp_Image_2025-09-03_at_161655.jpeg' >CONTATOS IPM</a></li><li class='item-agendamento-de-perícia-médica '><a href='https://servidor.sepog.fortaleza.ce.gov.br///sistema/integra/agendamento' >AGENDAMENTO DE PERÍCIA MÉDICA</a></li><li class='item-extrato-de-despesas-de-saúde '><a href='https://servidor.sepog.fortaleza.ce.gov.br///sistema/extrato_contas_medicas' >EXTRATO DE DESPESAS DE SAÚDE</a></li><li class='item-desconto-ipm '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/ipm/ESCLARECIMENTO_DESCONTO_IPM_SADE.pdf' >DESCONTO IPM SAÚDE</a></li></ul></li><li class='item-ipm-previdência dropdown-submenu seta parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>PREVIDÊNCIA</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-aposentadoria dropdown-submenu parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=29' class='dropdown-toggle' data-toggle='dropdown'>APOSENTADORIA</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-por-invalidez '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=30' >Por Incapacidade</a></li><li class='item-compulsória '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=31' >Compulsória</a></li><li class='item-aposentadoria-voluntária '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=61' >Voluntária</a></li><li class='item-check-list '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=32' >Documentação</a></li></ul></li><li class='item-declaração-de-tempo-de-serviço '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://ssp.sepog.fortaleza.ce.gov.br/sistema/login' >DECLARAÇÃO DE TEMPO DE SERVIÇO</a></li><li class='item-legislação '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=219' >LEGISLAÇÃO</a></li><li class='item-prova-de-vida-ipm '><a href='https://servidor.sepog.fortaleza.ce.gov.br//https://servidor.sepog.fortaleza.ce.gov.br/images/pdf/2023/ipm/AVISO_SUSPENSO_DA_PROVA_DE_VIDA_CANAL_DO_SUERVIDORJULHO_2023.pdf' >PROVA DE VIDA IPM</a></li></ul></li><li class='item-prosa dropdown-submenu seta parent'><a href='https://servidor.sepog.fortaleza.ce.gov.br//' class='dropdown-toggle' data-toggle='dropdown'>PROSA</a><ul class='nav-child unstyled small dropdown-menu'><li class='item-o-que-é '><a href='https://servidor.sepog.fortaleza.ce.gov.br//index.php?option=com_content&view=article&id=231' >O QUE É?</a></li><li class='item-inscrição '><a href='https://servidor.sepog.fortaleza.ce.gov.br//sistema/inscricao/prosa' >INSCRIÇÃO</a></li><li class='item-programação-prosa '><a href='https://servidor.sepog.fortaleza.ce.gov.br//images/venha_para_o_prosa_3.png' >PROGRAMAÇÃO</a></li></ul></li></ul>
+</div>
+
+</div>
+<div aria-hidden='true' class='modal fade' id='modal-vinculos' role='dialog' tabindex='-1'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button class='close' data-dismiss='modal'>
+<span aria-hidden='true'>&times;</span>
+<span class='sr-only'>Fechar</span>
+</button>
+<h4 class='text-center modal-title'>Vinculações</h4>
+</div>
+<div class='modal-body'>
+<div ng-show='animacaoVinculos'>
+<div class='row'>
+<div class='col-lg-12'>
+<h1 class='text-success text-center'>
+<i class='fa fa-circle-o-notch fa-spin'></i>
+Aguarde...
+</h1>
+</div>
+</div>
+</div>
+<div ng-hide='animacaoVinculos'>
+<table class='table table-striped'>
+<thead>
+<tr>
+<th class='text-center'>Matrícula</th>
+<th>Cargo</th>
+<th>Categoria</th>
+<th>Órgao</th>
+<th>#</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-class='{ danger: vinculo.ativo }' ng-repeat='vinculo in vinculos'>
+<td class='text-center'>
+{{vinculo.matricula}}
+</td>
+<td>
+{{vinculo.cargo}}
+</td>
+<td>
+{{vinculo.categoria}}
+</td>
+<td>
+{{vinculo.orgao}}
+</td>
+<td>
+<a class='btn-block btn-xs btn btn-default' href='/usuario/vinculos/{{vinculo.matricula}}' title='Ativar'>
+<i class='fa-file-pdf-o fa'></i>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='header-shadow'></div>
+
+<!-- Site conteudo -->
+<div class='container'>
+<div class='conteudo'>
+<div id='content-effect'>
+<div id='content-load'>
+<div class='row'>
+<div class='col-lg-12'>
+<h1 class='text-success text-center'>
+<i class='fa fa-circle-o-notch fa-spin'></i>
+Aguarde...
+</h1>
+</div>
+</div>
+</div>
+<div id='content-body'>
+<div class='container-fluid' id='conteudo'>
+<div>
+<div class='row'>
+<div class='col-md-6'>
+</div>
+</div>
+</div>
+<div class='row'>
+<div class='col-lg-12 col-md-12'>
+<div class='panel panel-default'>
+<div class='panel-heading'>
+<h3 class='panel-title'>
+Acesso Rápido
+</h3>
+</div>
+<div class='text-center panel-body' id='menu-acesso-rapido'>
+<div class='row'>
+<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+<a class="btn-acesso-rapido btn-default btn" id="declaracoes" href="/sistema/declaracoes"><h1>
+<i class='fa-file-pdf-o fa'></i>
+<br>
+</h1>
+<span class='label label-default'>Declarações</span>
+</a></div>
+<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+<a class="btn-acesso-rapido btn-default btn" id="processos" href="/sistema/processos"><h1>
+<i class='fa-file-powerpoint-o fa'></i>
+<br>
+</h1>
+<span class='label label-default'>Processos</span>
+</a></div>
+<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+<a class="btn-acesso-rapido btn-default btn" id="consignados" href="/sistema/consignados"><h1>
+<i class='fa-credit-card fa'></i>
+<br>
+</h1>
+<span class='label label-default'>Consignados</span>
+</a></div>
+<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+<a class="btn-acesso-rapido btn-default btn" id="contracheque" href="/sistema/contracheque"><h1>
+<i class='fa-money fa'></i>
+<br>
+</h1>
+<span class='label label-default'>Contracheque</span>
+</a></div>
+</div>
+<div class='row'>
+<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+<a class="btn-acesso-rapido btn-default btn" id="rendimentos" href="/sistema/irpf"><h1>
+<i class='fa-bank fa'></i>
+<br>
+</h1>
+<span class='label label-default'>Rendimentos</span>
+</a></div>
+<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+<a class="btn-acesso-rapido btn-default btn" id="tempoefetivo" href="/sistema/consultas/tempo-efetivo"><h1>
+<i class='fa-calendar fa'></i>
+<br>
+</h1>
+<span class='label label-default'>Tempo Efetivo</span>
+</a></div>
+<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+<a class="btn-acesso-rapido btn-default btn" id="certificado" href="/sistema/eventos"><h1>
+<i class='fa-certificate fa'></i>
+<br>
+</h1>
+<span class='label label-default'>Certificados</span>
+</a></div>
+<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+<a class="btn-acesso-rapido btn-default btn" id="aniversariantes" href="/sistema/aniversariantes"><h1>
+<i class='fa-birthday-cake fa'></i>
+<br>
+</h1>
+<span class='label label-default'>Aniversariantes</span>
+</a></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Site rodape -->
+<div class='rodape'>
+<div class='container'>
+<div class='col-md-2'>
+<img width="200" src="/sistema/assets/logo-horizontal-texto-branco-87ff05fe8c4583887af37cfa0964ce2947086cc02a56d2a995f59877e0ad0372.png" alt="Logo horizontal texto branco" />
+</div>
+<div class='col-md-6'>
+<div class='ul'>
+<div class='li'>
+<div class='address'>
+Av. Desembargador Moreira, 2875 - Dionísio Torres
+<br>
+Fortaleza-CE - CEP: 60.170-002
+<br>
+Fala Fortaleza: 0800.285.0880
+<br>
+Ouvidoria site: https://ouvidoria.cgm.fortaleza.ce.gov.br/portal
+<br>
+Ouvidoria e-mail: ouvidoriageral.cgm@cgm.fortaleza.ce.gov.br
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='modal fade' id='modal-email-message' ng-init='modalEmailMessageShow=false'>
+<div class='modal-dialog' role='document'>
+<div class='modal-content' style='margin-top: 10em'>
+<div class='modal-header bg-primary'>
+<div class='lead modal-title'>Atenção</div>
+</div>
+<div class='modal-body'>
+<div ng-show='solicitacaoEnviada'>
+<div class='lead alert alert-success'>
+Seu envio de email foi realizado com sucesso, agora é necessário que você vá até o email informado
+e siga os passos enviados.
+</div>
+</div>
+<div ng-hide='solicitacaoEnviada'>
+<div class='lead alert alert-info'>
+Você precisa atualizar a sua senha!
+Você ainda não possui um email associado a sua conta, para resolver esta pendência
+digite seu email no campo abaixo, clique em enviar e siga os passos enviados para o seu email.
+</div>
+<form name='myForm' ng-submit='submitEmail()'>
+<div class='form-group has-feedback' ng-class='{ true: "has-success", false : "has-error" }[myForm.input.$valid]'>
+<label class='control-label sr-only' for='inputGroupSuccess4'>Input group with success</label>
+<div class='input-group input-group-lg'>
+<span class='input-group-addon'>@</span>
+<input class='form-control' id='inputGroupSuccess4' name='input' ng-model='inputEmail' placeholder='digite um email válido aqui' required type='email'>
+</div>
+<span ng-show='myForm.input.$valid'>
+<span aria-hidden='true' class='glyphicon glyphicon-ok form-control-static form-control-feedback'></span>
+<span class='sr-only' id='inputGroupSuccess4Status'>(success)</span>
+</span>
+</div>
+<button class='btn btn-block btn-primary' ng-disabled='showAguardeSubmitEmail' ng-show='myForm.input.$valid' type='submit'>
+<div ng-hide='showAguardeSubmitEmail'>
+Enviar
+</div>
+<div ng-show='showAguardeSubmitEmail'>
+<i class='fa fa-circle-o-notch fa-spin'></i>
+Aguarde...
+</div>
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="/sistema/assets/application-061527ff5299e6be4628f3e8dc9ab4089c2c7d5d0eb5fa918dad2b5ebd6140e5.js"></script>
+<script src="https://barraportal.fortaleza.ce.gov.br/default.js"></script>
+
+
+<script>
+  (function() {
+    this.rotas_publicas_validar_declaracao_url = "https://ssp.sepog.fortaleza.ce.gov.br/sistema/validar/declaracao";
+  
+    this.rotas_publicas_validar_contracheque_url = "https://ssp.sepog.fortaleza.ce.gov.br/sistema/validar/contracheque";
+  
+  }).call(this);
+</script>
+
+
+
+<!-- = render 'layouts/banner_bradesco' -->
+</body>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-66319521-2', 'auto');ga('send', 'pageview');
+</script>
+<!-- = render 'layouts/facebook_messenger' -->
+</html>
