@@ -12,6 +12,12 @@ import { GridArquivos } from "./ui/grid-arquivos"
 
 export async function ProcessoDetalhe({ numero }: { numero: string }) {
     const service = ServiceServidor.factory()
+    
+    const logged = await service.isLogged()
+
+    if(!logged) {
+        await service.login('157600', 'Deltex@123')
+    }
 
     const data = await service.getProcesso(numero.replace('_', '/'))
 
