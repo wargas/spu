@@ -21,7 +21,7 @@ export class ServiceServidor {
     async isLogged() {
         const { body, headers } = await this.client.get(`https://ssp.sepog.fortaleza.ce.gov.br/sistema`);
 
-        await Bun.write('html/sistema1.html', body)
+        // await Bun.write('html/sistema1.html', body)
         this.html = body;
         const dados = this.document.querySelector('#dados-info dd')
 
@@ -49,7 +49,7 @@ export class ServiceServidor {
             form: formData
         });
 
-        await Bun.write('html/login.html', checar.body)
+        // await Bun.write('html/login.html', checar.body)
     }
 
     async getProcesso(numero: string) {

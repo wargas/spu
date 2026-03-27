@@ -7,4 +7,4 @@ const isLogged = await service.getProcesso('P126911/2026')
 
 console.log(isLogged.processo.movimentacoes)
 
-await Bun.write('data/processo.json', JSON.stringify(isLogged, null, 4))
+// await Bun.write('data/processo.json', JSON.stringify(isLogged, null, 4))
