@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  adapterPath: require.resolve('./adapter.js'),
+  output: 'standalone',
+  // generateBuildId() {
+  //       return process.env.GIT_HASH!
+  // },
 
-  output: 'standalone'
   /* config options here */
 };
 
