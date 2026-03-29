@@ -15,34 +15,6 @@ export default async function Home({ searchParams }: { searchParams: Promise<any
 
   const processo = (await searchParams).processo
 
-  // const service = ServiceServidor.factory() 
-
-  // let data: Processo | null = null;
-  // if (processo) {
-
-  //   const service = ServiceSPU.factory(processo)
-
-  //   data = await service.data();
-
-    
-
-  //   data.dataTree.processo.itens.setores.unshift({
-  //     documentos: [
-  //       {
-  //         id: 'CAPA',
-  //         setor: '',
-  //         nome: 'CAPA'
-  //       },
-  //       {
-  //         id: 'RESUMO',
-  //         setor: '',
-  //         nome: 'RESUMO'
-  //       }
-  //     ],
-  //     setor: 'INFORMAÇÕES'
-  //   })
-  // }
-
   async function handleBusca(data: FormData) {
     'use server'
 
